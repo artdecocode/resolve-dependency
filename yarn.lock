@@ -21,6 +21,11 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@artdeco/clean-stack/-/clean-stack-1.0.0.tgz#36ff9c9f66e6cb1eb0bfa90341be21cba70c7ea6"
 
+"@artdeco/clean-stack@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@artdeco/clean-stack/-/clean-stack-1.0.1.tgz#7e4d3bb1b0ac62173b00e4bba7091f7847cdb088"
+  integrity sha512-ZSavD8NpWA1/1SRCKrx8LZ5WfbKS1kRUIFOERJvR1jXqCAcbM3xWSP2VdCKEh4lCwWghSWQkotbpK6n+o1Y/xQ==
+
 "@wrote/clone@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@wrote/clone/-/clone-1.0.1.tgz#2f6e24f4855467b13cc4d7a2ca9677d07ab40292"
@@ -34,6 +39,13 @@
   resolved "https://registry.yarnpkg.com/@wrote/ensure-path/-/ensure-path-1.0.3.tgz#7faeff4ebb5b3972b745e0cc85f3e06cbca51d51"
   dependencies:
     makepromise "3.0.1"
+
+"@wrote/exists@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@wrote/exists/-/exists-1.0.1.tgz#6c72c49abf02af9bee1e1977a2257421704a51fe"
+  integrity sha512-fpUumy6miIM9Hz9n6eo2yjvhwnD/oeUX6AHLV2BtJv+3MqdzoZnFjHL1Sf0Rh/veNfdVF8zLJa4zQtTvnsL22g==
+  dependencies:
+    makepromise "3.0.2"
 
 "@wrote/read-dir-structure@1.0.1":
   version "1.0.1"
@@ -202,6 +214,13 @@ erotic@2.0.1:
   dependencies:
     "@artdeco/clean-stack" "1.0.0"
 
+erotic@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/erotic/-/erotic-2.0.2.tgz#22d611ea49bcacdc577abb9fbff3af67cbc5c1e3"
+  integrity sha512-iH9zPUi+/Y6vuzSz7EBRKI25UiBliDz4/lH1+BubsZZBBBZ77xV3iUlkUT0xKOBHbOOWOoH5J5xeSVDqWR3ivQ==
+  dependencies:
+    "@artdeco/clean-stack" "1.0.1"
+
 erte@1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/erte/-/erte-1.1.4.tgz#1400a891622c5a12970b710b2f227a7182c0dc9c"
@@ -245,6 +264,13 @@ makepromise@3.0.1:
   resolved "https://registry.yarnpkg.com/makepromise/-/makepromise-3.0.1.tgz#5610962047452f91b278c4d3bdc1c854185d913e"
   dependencies:
     erotic "1.2.1"
+
+makepromise@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/makepromise/-/makepromise-3.0.2.tgz#320376544da2fc3220c66d5baec037fca4c279f6"
+  integrity sha512-w9PNbpDhrwSUt9iDKXPcuSukoyy6KqgPXMombnSqmlXi/wA8zTOs6PghVx4l3Jes6tonJBOztBoGaYgT9iFtbg==
+  dependencies:
+    erotic "2.0.2"
 
 mismatch@1.0.3:
   version "1.0.3"
