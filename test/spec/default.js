@@ -28,6 +28,16 @@ const T = {
     ok(isDir)
     equal(path, 'test/fixture/jsx/index.jsx')
   },
+  async 'resolves a file'() {
+    const { isDir, path } = await resolveDependency('test/fixture/jsx/index')
+    ok(!isDir)
+    equal(path, 'test/fixture/jsx/index.jsx')
+  },
+  async 'resolves relative directory'() {
+    const { isDir, path } = await resolveDependency('./jsx', 'test/fixture/index.js')
+    ok(isDir)
+    equal(path, 'test/fixture/jsx/index.jsx')
+  },
 }
 
 export default T

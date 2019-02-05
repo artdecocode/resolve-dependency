@@ -1,5 +1,5 @@
 import exists from '@wrote/exists'
-import { dirname, join } from 'path'
+import { dirname, join, relative } from 'path'
 
 /**
  * For the given local path that can omit the JS/JSX extension and point to a directory (e.g., `./lib` or `./lib/example`), find that file on the filesystem.
@@ -28,7 +28,10 @@ const resolveDependency = async (path, relativeFrom) => {
     res = p
     isDir = true
   }
-  return { path: res, isDir }
+  return {
+    path: path.startsWith('.') ? relative('', res) : res,
+    isDir,
+  }
 }
 
 export default resolveDependency
