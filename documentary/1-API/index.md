@@ -8,16 +8,14 @@ import resolveDependency from 'resolve-dependency'
 
 %~%
 
-```## resolveDependency
+```## async resolveDependency => { path: string, isDir: boolean }
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["path", "string"],
+  ["relativeFrom?", "string"]
 ]
 ```
 
-Call this function to get the result you want.
-
-%TYPEDEF types/index.xml%
+For the path that is used to require a module from another module, find the destination of the actual file on the file system. This includes the index JS and JSX files of directories. The second `relativeFrom` argument is used to point to the file in which the path is required from.
 
 %EXAMPLE: example/example.js, ../src => resolve-dependency%
 %FORK example example/example%
