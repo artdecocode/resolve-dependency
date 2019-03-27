@@ -45,11 +45,11 @@
   },
   "homepage": "https://github.com/artdecocode/resolve-dependency#readme",
   "devDependencies": {
-    "alamode": "1.7.3",
-    "documentary": "1.21.1",
+    "alamode": "1.8.6",
+    "documentary": "1.22.0",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "3.6.6"
+    "zoroaster": "3.11.1"
   },
   "dependencies": {
     "@wrote/exists": "1.0.1"

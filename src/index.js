@@ -15,23 +15,36 @@ const resolveDependency = async (path, relativeFrom) => {
   let res = path
   let isDir = false
   if (!e) {
-    let p = `${path}.js`
-    e = await exists(p)
-    if (!e) p = `${path}.jsx`; e = await exists(p)
-    if (!e) throw new Error(`${path}.js or ${path}.jsx is not found.`)
-    res = p
+    res = await checkSources(path)
+    if (!res) throw new Error(`${path}.js or ${path}.jsx is not found.`)
   } else if (e.isDirectory()) {
-    let p = `${path}/index.js`
-    e = await exists(p)
-    if (!e) p = `${p}x`; e = await exists(p)
-    if (!e) throw new Error(`index.jsx? file is not found in ${path}.`)
-    res = p
-    isDir = true
+    // first try file
+    let fileChecked = false
+    let fileRes
+    if (!path.endsWith('/')) {
+      fileRes = res = await checkSources(path)
+      fileChecked = true
+    }
+    if (!fileRes) {
+      res = await checkSources(join(path, 'index'))
+      if (!res) {
+        const s = fileChecked ? `${path}.jsx? does not exist, and ` : ''
+        throw new Error(`${s}index.jsx? file is not found in ${path}`)
+      }
+      isDir = true
+    }
   }
   return {
     path: path.startsWith('.') ? relative('', res) : res,
     isDir,
   }
+}
+
+const checkSources = async (path) => {
+  let pp = `${path}.js`
+  let e = await exists(pp)
+  if (!e) pp = `${pp}x`; e = await exists(pp)
+  if (e) return pp
 }
 
 export default resolveDependency

@@ -1,4 +1,4 @@
-import { equal, ok } from 'zoroaster/assert'
+import { equal, ok, throws } from 'zoroaster/assert'
 import Context from '../context'
 import resolveDependency from '../../src'
 
@@ -37,6 +37,13 @@ const T = {
     const { isDir, path } = await resolveDependency('./jsx', 'test/fixture/index.js')
     ok(isDir)
     equal(path, 'test/fixture/jsx/index.jsx')
+  },
+  async 'throws when cannot be resolved'() {
+    await throws({
+      fn: resolveDependency,
+      args: ['../notrun', 'test/fixture/both/run/doc.js'],
+      message: 'test/fixture/both/notrun.jsx? does not exist, and index.jsx? file is not found in test/fixture/both/notrun',
+    })
   },
 }
 
