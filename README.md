@@ -34,17 +34,17 @@ For the path that is used to require a module from another module, find the dest
 ```js
 /* yarn example/ */
 import resolveDependency from 'resolve-dependency'
-import { resolve } from 'path';
+import { resolve } from 'path'
 
 (async () => {
   // 1. Resolve index.js from directory
-  const res = await resolveDependency('./example')
+  const res = await resolveDependency('./example/dir')
   console.log(res)
   // 2. Resolve index.jsx from directory
   const res2 = await resolveDependency('./example/jsx')
   console.log(res2)
-  // 3. Resolve file
-  const res3 = await resolveDependency('./example/example')
+  // 3. Resolve file without extension
+  const res3 = await resolveDependency('./example/dir/index')
   console.log(res3)
   // 4. Resolve relative dependency
   const res4 = await resolveDependency('./lib', 'example/jsx/index.js')
@@ -56,9 +56,9 @@ import { resolve } from 'path';
 })()
 ```
 ```
-{ path: 'example/index.js', isDir: true }
+{ path: 'example/dir/index.js', isDir: true }
 { path: 'example/jsx/index.jsx', isDir: true }
-{ path: 'example/example.js', isDir: false }
+{ path: 'example/dir/index.js', isDir: false }
 { path: 'example/jsx/lib/index.js', isDir: true }
 { path: '/Users/zavr/adc/resolve-dependency/example/jsx/lib/index.js',
   isDir: true }
@@ -68,6 +68,22 @@ import { resolve } from 'path';
 
 ## Copyright
 
-<table><tr><th><a href="https://artd.eco"><img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" /></a></th><th>© <a href="https://artd.eco">Art Deco</a>   2019</th><th><a href="https://www.technation.sucks" title="Tech Nation Visa"><img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif" alt="Tech Nation Visa" /></a></th><th><a href="https://www.technation.sucks">Tech Nation Visa Sucks</a></th></tr></table>
+<table>
+  <tr>
+    <th>
+      <a href="https://artd.eco">
+        <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
+      </a>
+    </th>
+    <th>© <a href="https://artd.eco">Art Deco</a>   2019</th>
+    <th>
+      <a href="https://www.technation.sucks" title="Tech Nation Visa">
+        <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif"
+          alt="Tech Nation Visa" />
+      </a>
+    </th>
+    <th><a href="https://www.technation.sucks">Tech Nation Visa Sucks</a></th>
+  </tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>

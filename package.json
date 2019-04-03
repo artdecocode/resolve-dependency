@@ -17,7 +17,7 @@
     "d1": "NODE_DEBUG=doc doc src/index.js -g",
     "build": "yarn-s d b doc",
     "rec": "NODE_DEBUG=appshot appshot -T 23 -a Terminal -y 150 -f",
-    "e": "node example",
+    "e": "alanode",
     "example/": "yarn e example/example.js"
   },
   "files": [
@@ -45,13 +45,13 @@
   },
   "homepage": "https://github.com/artdecocode/resolve-dependency#readme",
   "devDependencies": {
-    "alamode": "1.8.6",
-    "documentary": "1.22.0",
+    "alamode": "1.9.0",
+    "documentary": "1.23.2",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "3.11.1"
+    "zoroaster": "3.11.2"
   },
   "dependencies": {
-    "@wrote/exists": "1.0.1"
+    "@wrote/exists": "1.0.3"
   }
 }
