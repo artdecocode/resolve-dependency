@@ -43,15 +43,15 @@
   "bugs": {
     "url": "https://github.com/artdecocode/resolve-dependency/issues"
   },
-  "homepage": "https://github.com/artdecocode/resolve-dependency#readme",
+  "homepage": "https://www.artd.eco",
   "devDependencies": {
-    "alamode": "^1.9.3",
-    "documentary": "^1.23.4",
+    "alamode": "^3.3.3",
+    "documentary": "^1.35.11",
     "eslint-config-artdeco": "1.0.1",
-    "yarn-s": "1.1.0",
-    "zoroaster": "^3.11.6"
+    "yarn-s": "1.2.3",
+    "zoroaster": "^4.2.0"
   },
   "dependencies": {
-    "@wrote/exists": "^1.0.3"
+    "@wrote/exists": "^1.0.5"
   }
 }
