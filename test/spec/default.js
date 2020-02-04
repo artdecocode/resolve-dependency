@@ -1,4 +1,4 @@
-import { equal, ok, throws } from 'zoroaster/assert'
+import { equal, ok, throws } from '@zoroaster/assert'
 import Context from '../context'
 import resolveDependency from '../../src'
 
